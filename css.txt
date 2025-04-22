@@ -1,0 +1,58 @@
+// Home2Home Tutorials - Educational Institution Website import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { Mail, Phone } from "lucide-react"; import { motion } from "framer-motion";
+
+export default function HomePage() { return ( <div className="min-h-screen bg-gradient-to-br from-white to-blue-50 text-gray-800"> {/* Header */} <header className="p-6 flex justify-between items-center shadow bg-white"> <h1 className="text-2xl font-bold text-blue-600"> Home<span className="text-black">2</span>Home Tutorials </h1> <nav className="space-x-6 text-lg"> <a href="#about" className="hover:text-blue-600">About Us</a> <a href="#contact" className="hover:text-blue-600">Contact</a> <a href="#terms" className="hover:text-blue-600">Terms</a> </nav> </header>
+
+{/* Hero Section */}
+  <motion.section
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-center py-20 px-6"
+  >
+    <h2 className="text-4xl font-bold mb-4 text-blue-700">
+      Personalized Learning from the Comfort of Your Home
+    </h2>
+    <p className="text-lg max-w-2xl mx-auto">
+      We bring quality tutors and structured learning directly to school students and parents. Flexible, affordable, and effective education.
+    </p>
+    <Button className="mt-6">Join Now</Button>
+  </motion.section>
+
+  {/* About Us */}
+  <section id="about" className="px-6 py-12 bg-white">
+    <h3 className="text-3xl font-semibold text-center mb-6">About Us</h3>
+    <Card className="max-w-3xl mx-auto">
+      <CardContent className="p-6 text-center">
+        <p>
+          Home2Home Tutorials is an educational initiative focused on delivering personalized, at-home learning experiences for school students. Our tutors are carefully selected to match student needs, ensuring progress and confidence in every subject.
+        </p>
+      </CardContent>
+    </Card>
+  </section>
+
+  {/* Contact */}
+  <section id="contact" className="px-6 py-12 bg-blue-50">
+    <h3 className="text-3xl font-semibold text-center mb-6">Contact Us</h3>
+    <div className="max-w-xl mx-auto text-center space-y-4">
+      <p><Mail className="inline mr-2" /> contact@home2hometutorials.com</p>
+      <p><Phone className="inline mr-2" /> +91 98765 43210</p>
+    </div>
+  </section>
+
+  {/* Terms and Conditions */}
+  <section id="terms" className="px-6 py-12 bg-white">
+    <h3 className="text-3xl font-semibold text-center mb-6">Terms & Conditions</h3>
+    <div className="max-w-3xl mx-auto text-sm space-y-4 text-gray-600">
+      <p>1. All sessions are to be scheduled in advance through our portal.</p>
+      <p>2. Cancellations must be made 24 hours prior to scheduled classes.</p>
+      <p>3. Fees are non-refundable once a session has been attended.</p>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="text-center p-4 text-sm text-gray-500 bg-blue-100">
+    © {new Date().getFullYear()} Home2Home Tutorials. All rights reserved.
+  </footer>
+</div>
+
+); }
